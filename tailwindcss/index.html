@@ -1,0 +1,147 @@
+<!-- 後で調べること
+    ・mb-4って？
+    　margin bottom の略
+    　このノリでpaddingも同様にできる
+      margin: auto -> m-auto
+    
+    ・widthの指定
+    　w-[数値]
+    　※%にしたい場合は分数で表記する
+    　※レスポンシブにしたい場合は、sm,md,lgをつけるそれ以上の場合に適用される
+    　　例) w-full md:w-1/2 md以上の場合は画面幅50%、未満の場合は、親要素の幅フル
+
+    ・要素に丸みをつける
+    　rounded-xxx 丸みの度合いをxxxによって変更する
+    　https://tailwindcss.com/docs/border-radius
+
+    ・widthの指定
+    　h-[数値]
+    　※%にしたい場合は分数で表記する
+    　※レスポンシブにしたい場合は、sm,md,lgをつけるそれ以上の場合に適用される
+    　　例) h-full md:h-1/2 md以上の場合は画面幅50%、未満の場合は、親要素の高さフル
+    　https://tailwindcss.com/docs/height
+
+    ・gridレイアウトで縦並びにしたい場合
+    　grid gap-4 grid-cols-1 grid-rows-3　1列3行で4pxの間隔がある並びになる
+    　https://tailwindcss.com/docs/display#block-and-inline
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>tailwind css sample</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-3xl font-bold underline text-clifford">
+            Hello world!
+        </h1>
+    </header>
+    <main>
+        <div class=" flex items-center justify-center">
+            <form class="w-full md:w-1/2 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <h1 class="block text-gray-700 font-bold mb-2 text-xl text-center">ランチ勉強会参加後アンケート</h1>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Date">
+                        参加日
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        name="date" type="date" required
+                    >
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        発表の満足度
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">大変良い</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">良い</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">ふつう</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">悪い</span>
+                    </label>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        総合満足度
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">大変良い</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">良い</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">ふつう</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input name="operationScore" class="form-radio" type="radio" value="4" checked>
+                        <span class="ml-2">悪い</span>
+                    </label>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">良かった点</label>
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="goodMessage" type="text"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">改善点</label>
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="goodMessage" type="text"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">その他</label>
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="goodMessage" type="text"></textarea>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button name="submit"
+                            class="rounded-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            type="submit">
+                        送信
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
+
+<script>
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+</script>
+
+<style type="text/tailwindcss">
+@layer utilities {
+    .content-auto {
+    content-visibility: auto;
+    }
+}
+</style>
