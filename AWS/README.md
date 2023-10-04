@@ -7,7 +7,7 @@
 2. 試験対策
    - AWS公式模擬問題
    - AWS公式e-learning
-   - Udemy(https://www.udemy.com/course/aws-4260/#reviews)
+   - Udemy([https://www.udemy.com/course/aws-4260/#reviews](https://wakutojp.udemy.com/course/ok-aws-e/learn/lecture/21063246#overview))
 3. やること
    - 共通
      - このリポジトリのAWSの日付フォルダにやったことを記録していくこと
